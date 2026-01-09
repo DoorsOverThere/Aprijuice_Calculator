@@ -235,10 +235,9 @@ td img {
     outline: 4px solid rgba(16, 1, 16, 0.95);
     border-radius: 4px;
     line-height: 48px;
-    position: fixed;
+    position: absolute;
+    top: 58px;
     width: max-content;
-    bottom: inherit;
-    transform: translateY(calc(50% + 30px));
     z-index: 2;
     pointer-events:none
 }
