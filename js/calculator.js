@@ -208,7 +208,7 @@ function resetRecipe() {
     updateUI();
 }
 
-async function shareRecipe() {
+function shareRecipe() {
     const shareData = {
         title: aprijuiceName,
         url:  'https://doorsoverthere.github.io/Aprijuice_Calculator'
