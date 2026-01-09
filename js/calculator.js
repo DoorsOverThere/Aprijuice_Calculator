@@ -211,8 +211,8 @@ function resetRecipe() {
 async function shareRecipe() {
     const shareData = {
         title: aprijuiceName,
-        text: 'Aprijuice Calculator',
-        url:  window.location.href
+        text: "Here's a recipe for " + aprijuiceName + "!",
+        url:  'https://doorsoverthere.github.io/Aprijuice_Calculator'
     };
     shareData.url += '?apricornColor=' + recipe.apricornColor;
     recipe.berries.forEach((berry, index) => {
