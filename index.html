@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aprijuice Calculator</title>
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="imgs/aprijuices/Delicious_Yellow_Aprijuice.png">
+</head>
+<body>
+<div id="mainContainer" class="container">
+    <div id="leftContainer" class="left">
+        <h1 id="title">APRIJUICE CALCULATOR</h1>
+<!--        <div id="titleDescription" class="interface info-interface" style="width: 644px;">-->
+<!--            <div class="info-text">-->
+<!--                <div>Aprijuice can be used to increase the riding stats of a rideable Pokémon in Cobblemon. This tool allows you to determine the ingredients needed to get the stat increases you desire!</div>-->
+<!--            </div>-->
+<!--        </div>-->
+        <div id="campfirePot" class="interface cooking-interface">
+            <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; width: 100%; padding: 10px; box-sizing: border-box;">
+                <div class="interface-button" onclick="resetRecipe()">
+                    <img src="imgs/ui/reset.png">
+                </div>
+                <div>Campfire Pot</div>
+<!--                Share button-->
+                <div class="interface-button" onclick="shareRecipe()">
+                    <img src="imgs/ui/share.png">
+                </div>
+            </div>
+            <div class="cooking-interface-body">
+                <div class="cooking-interface-ingredients">
+
+            <!--        Apricorn + Ingredients-->
+                    <div class="item-slot-row">
+                        <div id="apricornSlot" class="item-slot"></div>
+                        <div class="item-slot">
+                            <img alt="Pep-Up Flower" src="/imgs/ingredients/Pep-Up_Flower.png">
+                            <span class="item-tooltip">Pep-Up Flower</span>
+                        </div>
+                        <div class="item-slot">
+                            <img alt="Energy Root" src="/imgs/ingredients/Energy_Root.png">
+                            <span class="item-tooltip">Energy Root</span>
+                        </div>
+                    </div>
+                    <div class="item-slot-row">
+                        <div class="item-slot"></div>
+                        <div class="item-slot"></div>
+                        <div class="item-slot"></div>
+                    </div>
+                    <div class="item-slot-row">
+                        <div class="item-slot"></div>
+                        <div class="item-slot"></div>
+                        <div class="item-slot"></div>
+                    </div>
+                </div>
+                <div class="cooking-interface-right">
+
+            <!--        Berries-->
+                    <div class="item-slot-row">
+                        <div id="berrySlot1" class="item-slot" onclick="removeBerry(0)"></div>
+                        <div id="berrySlot2" class="item-slot" onclick="removeBerry(1)"></div>
+                        <div id="berrySlot3" class="item-slot" onclick="removeBerry(2)"></div>
+                    </div>
+
+            <!--        Output-->
+                    <div class="item-slot-output">
+                        <div id="outputSlot" class="item-slot"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="outputCalculations" class="interface calculations-interface"></div>
+    </div>
+
+    <div class="right">
+        <h1>INGREDIENT OPTIONS</h1>
+        <div style="display: flex; flex-direction: column; gap: 15px;">
+            <div class="interface info-interface">
+                <div class="info-text">
+                    <h2>Apricorns</h2>
+                    <div>The color of the apricorn used to cook an Aprijuice provides riding stat modifiers in addition to any flavor-based bonuses gained from Berries.</div>
+                    <div>Select an apricorn below to use it in your recipe.</div>
+                </div>
+            </div>
+    <!--        Apricorn Options-->
+            <table id="apricornTable">
+                <thead>
+                    <tr>
+                        <th colspan="2">Apricorn</th>
+                        <th style="background-color: var(--spicy);">Spicy<br>(Accel.)</th>
+                        <th style="background-color: var(--sour);">Sour<br>(Stamina)</th>
+                        <th style="background-color: var(--dry);">Dry<br>(Skill)</th>
+                        <th style="background-color: var(--bitter);">Bitter<br>(Jump)</th>
+                        <th style="background-color: var(--sweet);">Sweet<br>(Speed)</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 35px;">
+            <div class="interface info-interface">
+                <div class="info-text" style="flex: 1.2;">
+                    <h2>Berries</h2>
+                    <div>Flavor values of the same type are added together and compared against a set of thresholds. When a threshold is reached, a corresponding number of stat points is added to the aprijuice for the riding stat associated with that flavor.</div>
+                    <div>Select up to 3 berries below to use in your recipe. To remove berries, click on them in the Campfire Pot.</div>
+                </div>
+                <table style="flex: 0.8;">
+                    <thead>
+                    <tr>
+                        <th>Threshold</th>
+                        <th>Stat Boost</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>15</td>
+                        <td>+1</td>
+                    </tr>
+                    <tr>
+                        <td>35</td>
+                        <td>+2</td>
+                    </tr>
+                    <tr>
+                        <td>45</td>
+                        <td>+3</td>
+                    </tr>
+                    <tr>
+                        <td>55</td>
+                        <td>+4</td>
+                    </tr>
+                    <tr>
+                        <td>75</td>
+                        <td>+5</td>
+                    </tr>
+                    <tr>
+                        <td>105</td>
+                        <td>+6</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+    <!--        Berry Options-->
+            <table id="berryTable" style="width: 100%; overflow-wrap: anywhere;">
+                <thead>
+                    <tr>
+                        <th colspan="2" data-sort="name"><div>Berry</div></th>
+                        <th style="background-color: var(--spicy);" data-sort="spicy"><div>Spicy<br>(Accel.)</div></th>
+                        <th style="background-color: var(--sour);" data-sort="sour"><div>Sour<br>(Stamina)</div></th>
+                        <th style="background-color: var(--dry);" data-sort="dry"><div>Dry<br>(Skill)</div></th>
+                        <th style="background-color: var(--bitter);" data-sort="bitter"><div>Bitter<br>(Jump)</div></th>
+                        <th style="background-color: var(--sweet);" data-sort="sweet"><div>Sweet<br>(Speed)</div></th>
+                        <th data-sort="total"><div>Total</div></th>
+                    </tr>
+                </thead>
+                <tbody id="berryTableBody"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="js/data.js"></script>
+<script src="js/buildHTML.js"></script>
+<script src="js/calculator.js"></script>
+<script src="js/media.js"></script>
+<script src="js/filter.js"></script>
+</body>
+</html>
