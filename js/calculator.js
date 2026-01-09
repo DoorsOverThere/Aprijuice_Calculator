@@ -214,7 +214,7 @@ async function shareRecipe() {
         text: 'Aprijuice Calculator',
         url:  window.location.href
     };
-    shareData.url += '&apricornColor=' + recipe.apricornColor;
+    shareData.url += '?apricornColor=' + recipe.apricornColor;
     recipe.berries.forEach((berry, index) => {
         shareData.url += '&berry' + (index + 1) + '=' + encodeURIComponent(berry.name);
     });
