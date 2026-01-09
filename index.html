@@ -15,15 +15,22 @@
 <!--                <div>Aprijuice can be used to increase the riding stats of a rideable Pokémon in Cobblemon. This tool allows you to determine the ingredients needed to get the stat increases you desire!</div>-->
 <!--            </div>-->
 <!--        </div>-->
+<!--        </div>-->
         <div id="campfirePot" class="interface cooking-interface">
             <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; width: 100%; padding: 10px; box-sizing: border-box;">
-                <div class="interface-button" onclick="resetRecipe()">
-                    <img src="imgs/ui/reset.png">
+                <div style="display: flex; flex-direction: row; align-items: center; gap: 5px; font-size: 14px;">
+                    <div class="interface-button" onclick="resetRecipe()">
+                        <img src="imgs/ui/reset.png">
+                    </div>
+                    Reset<br>Recipe
                 </div>
                 <div>Campfire Pot</div>
 <!--                Share button-->
-                <div class="interface-button" onclick="shareRecipe()">
-                    <img src="imgs/ui/share.png">
+                <div style="display: flex; flex-direction: row; align-items: center; gap: 5px; font-size: 14px; text-align: right;">
+                    Share<br>Recipe
+                    <div class="interface-button" onclick="shareRecipe()">
+                        <img src="imgs/ui/share.png">
+                    </div>
                 </div>
             </div>
             <div class="cooking-interface-body">
