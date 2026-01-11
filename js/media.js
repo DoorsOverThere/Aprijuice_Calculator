@@ -4,10 +4,12 @@ adjustForMedia();
 function adjustForMedia() {
     if (window.matchMedia("(min-width: 1300px)").matches) {
         document.getElementById('leftContainer').prepend(document.getElementById('campfirePot'));
+        document.getElementById('leftContainer').prepend(document.getElementById('quickRecipeBox'));
         document.getElementById('leftContainer').prepend(document.getElementById('titleDescription'));
         document.getElementById('leftContainer').prepend(document.getElementById('title'));
     } else {
         document.getElementById('mainContainer').prepend(document.getElementById('campfirePot'));
+        document.getElementById('mainContainer').prepend(document.getElementById('quickRecipeBox'));
         document.getElementById('mainContainer').prepend(document.getElementById('titleDescription'));
         document.getElementById('mainContainer').prepend(document.getElementById('title'));
     }

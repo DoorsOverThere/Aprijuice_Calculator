@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Aprijuice Calculator</title>
+    <title>Cobblemon Aprijuice Calculator</title>
     <meta name="description" content="A simple tool for the Cobblemon Minecraft mod that allows you to calculate Aprijuice stats.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/x-icon" href="imgs/aprijuices/Delicious_Yellow_Aprijuice.png">
@@ -16,6 +16,50 @@
         <div id="titleDescription" class="interface info-interface" style="width: 644px;">
             <div class="info-text">
                 <div>Aprijuice can be used to increase the riding stats of a rideable Pokémon in Cobblemon. This tool allows you to determine the ingredients needed to get the stat increases you desire!</div>
+            </div>
+        </div>
+        <div id="quickRecipeBox" class="interface info-interface">
+            <div class="info-text">
+                <h2>Quick Recipes</h2>
+                *Starf berries are interchangable for Lansat berries!
+                <div style="display: flex; flex-direction: row; justify-content: space-between; gap: 15px;">
+                    <div style="display: flex; flex-direction: column; align-items: center; font-size: 14px; color: var(--spicy)">
+                        <div class="interface-button" onclick="setQuickRecipe('acceleration');">
+                            <img src="imgs/aprijuices/Delicious_Red_Aprijuice.png" alt="Acceleration Button" class="icon">
+                        </div>
+                        Accel.
+                    </div>
+                    <div style="display: flex; flex-direction: column; align-items: center; font-size: 14px; color: var(--sour)">
+                        <div class="interface-button" onclick="setQuickRecipe('stamina');">
+                            <img src="imgs/aprijuices/Delicious_Yellow_Aprijuice.png" alt="Stamina Button" class="icon">
+                        </div>
+                        Stamina
+                    </div>
+                    <div style="display: flex; flex-direction: column; align-items: center; font-size: 14px; color: var(--dry)">
+                        <div class="interface-button" onclick="setQuickRecipe('skill');">
+                            <img src="imgs/aprijuices/Delicious_Blue_Aprijuice.png" alt="Skill Button" class="icon">
+                        </div>
+                        Skill
+                    </div>
+                    <div style="display: flex; flex-direction: column; align-items: center; font-size: 14px; color: var(--bitter)">
+                        <div class="interface-button" onclick="setQuickRecipe('jump');">
+                            <img src="imgs/aprijuices/Delicious_Green_Aprijuice.png" alt="Jump Button" class="icon">
+                        </div>
+                        Jump
+                    </div>
+                    <div style="display: flex; flex-direction: column; align-items: center; font-size: 14px; color: var(--sweet)">
+                        <div class="interface-button" onclick="setQuickRecipe('speed');">
+                            <img src="imgs/aprijuices/Delicious_Pink_Aprijuice.png" alt="Speed Button" class="icon">
+                        </div>
+                        Speed
+                    </div>
+                    <div style="display: flex; flex-direction: column; align-items: center; font-size: 14px;">
+                        <div class="interface-button" onclick="setQuickRecipe('all around');">
+                            <img src="imgs/aprijuices/Delicious_Black_Aprijuice.png" alt="All Around Button" class="icon">
+                        </div>
+                        All
+                    </div>
+                </div>
             </div>
         </div>
         <div id="campfirePot" class="interface cooking-interface">

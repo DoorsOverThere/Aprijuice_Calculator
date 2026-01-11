@@ -907,3 +907,59 @@ const itemHTML = {
     "White Aprijuice": `<img alt="White Aprijuice" src="imgs/aprijuices/Plain_White_Aprijuice.png"><span class="item-tooltip details-tooltip">White Aprijuice</span>`,
     "Yellow Aprijuice": `<img alt="Yellow Aprijuice" src="imgs/aprijuices/Plain_Yellow_Aprijuice.png"><span class="item-tooltip details-tooltip">Yellow Aprijuice</span>`
 }
+
+function getBerry(berryName) {
+    return berries.find(berry => berry.name === (berryName + " Berry"))
+}
+
+const quickRecipes = {
+    'acceleration': {
+        'apricornColor': 'Red',
+        'berries': [
+            getBerry('Enigma'),
+            getBerry('Enigma'),
+            getBerry('Starf')
+        ]
+    },
+    'stamina': {
+        'apricornColor': 'Yellow',
+        'berries': [
+            getBerry('Rowap'),
+            getBerry('Rowap'),
+            getBerry('Apicot')
+        ]
+    },
+    'skill': {
+        'apricornColor': 'Blue',
+        'berries': [
+            getBerry('Micle'),
+            getBerry('Micle'),
+            getBerry('Ganlon')
+        ]
+    },
+    'jump': {
+        'apricornColor': 'Green',
+        'berries': [
+            getBerry('Jaboca'),
+            getBerry('Jaboca'),
+            getBerry('Maranga')
+        ]
+    },
+    'speed': {
+        'apricornColor': 'Pink',
+        'berries': [
+            getBerry('Custap'),
+            getBerry('Custap'),
+            getBerry('Starf')
+        ]
+    },
+    'all around': {
+        'apricornColor': 'Black',
+        'berries': [
+            getBerry('Starf'),
+            getBerry('Starf'),
+            getBerry('Ganlon')
+        ]
+    }
+
+}

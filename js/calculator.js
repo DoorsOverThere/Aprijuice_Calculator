@@ -23,11 +23,6 @@ const berrySlots = [
 const outputSlot = document.getElementById("outputSlot");
 const outputCalculations = document.getElementById("outputCalculations");
 
-function setRecipe(recipe) {
-    recipe = recipe || {};
-    updateUI();
-}
-
 function selectApricorn(color) {
     recipe.apricornColor = color;
     updateUI();
@@ -218,6 +213,14 @@ function shareRecipe() {
         shareData.url += '&berry' + (index + 1) + '=' + encodeURIComponent(berry.name);
     });
     navigator.share(shareData);
+}
+
+function setQuickRecipe(recipeName) {
+    recipe = quickRecipes[recipeName] || {
+        'apricornColor': 'Red',
+        'berries': [],
+    };
+    updateUI();
 }
 
 updateUI();
