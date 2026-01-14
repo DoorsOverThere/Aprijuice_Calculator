@@ -216,7 +216,7 @@ function shareRecipe() {
 }
 
 function setQuickRecipe(recipeName) {
-    recipe = quickRecipes[recipeName] || {
+    recipe = structuredClone(quickRecipes[recipeName]) || {
         'apricornColor': 'Red',
         'berries': [],
     };
